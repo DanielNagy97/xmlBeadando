@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <xs:element name="lemezkolcsonzo">
+        <xs:complexType>
+            <xs:sequence>
+                
+                <xs:element name="eloadok">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="eloado" type="eloadoTipus" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="albumok">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="album" type="albumTipus" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="peldanyok">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="peldany" type="peldanyTipus" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="kolcsonzok">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="kolcsonzo" type="kolcsonzoTipus" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                
+                <xs:element name="kolcsonzesek">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="kolcsonzes" type="kolcsonzesTipus" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType> 
+    </xs:element>
+    
+    <xs:complexType name="eloadoTipus">
+        <xs:sequence>
+            <xs:element name="nev" type="xs:string"/>
+            <xs:element name="orszag" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="eid" type="xs:int" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="albumTipus">
+        <xs:sequence>
+            <xs:element name="cim" type="xs:string"/>
+            <xs:element name="mufaj" type="xs:string"/>
+            <xs:element name="kiadaseve" type="xs:int"/>
+        </xs:sequence>
+        <xs:attribute name="katalogusszam" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="peldanyTipus">
+        <xs:sequence>
+            <xs:element name="allapot" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="pid" type="xs:int" use="required"/>
+    </xs:complexType>
+                
+    <xs:complexType name="kolcsonzoTipus">
+        <xs:sequence>
+            <xs:element name="nev" type="xs:string"/>
+            <xs:element name="telefon" type="xs:string"/>
+            <xs:element name="lakcim" type="lakcimTipus"/>
+        </xs:sequence>
+        <xs:attribute name="kid" type="xs:int" use="required"/>
+    </xs:complexType>
+                
+    <xs:complexType name="lakcimTipus">
+        <xs:sequence>
+            <xs:element name="iranyitoszam" type="xs:string"/>
+            <xs:element name="varos" type="xs:string"/>
+            <xs:element name="utca" type="xs:string"/>
+            <xs:element name="hazszam" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+                
+         
+    <xs:complexType name="kolcsonzesTipus">
+        <xs:sequence>
+            <xs:element name="tol" type="xs:date"/>
+            <xs:element name="ig" type="xs:date"/>
+            <xs:element name="visszahozva" type="xs:boolean" default="false"/>
+        </xs:sequence>
+        <xs:attribute name="kolcsonzo" type="xs:int" use="required"/>
+        <xs:attribute name="peldany" type="xs:int" use="required"/>
+    </xs:complexType>
+                
+                
+    
+    
+</xs:schema>
