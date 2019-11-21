@@ -25,6 +25,13 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+                <xs:element name="kolcsonzesek">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="kolcsonzes" type="kolcsonzesTipus" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="kolcsonzok">
                     <xs:complexType>
                         <xs:sequence>
@@ -49,24 +56,24 @@
         </xs:key>  
         <xs:key name="key4">
             <xs:selector xpath="kolcsonzo" />
-            <xs:field xpath="@kid" />
+            <xs:field xpath="@id" />
         </xs:key>
         
-        <xs:keyref name="keyref1" refer="key2">
-            <xs:selector xpath="eloado" />
-            <xs:field xpath="@katalogusszam" />
-        </xs:keyref>
-        <xs:keyref name="keyref2" refer="key1">
+        <xs:keyref name="keyref1" refer="key1">
             <xs:selector xpath="album" />
             <xs:field xpath="@eid" />
         </xs:keyref>
-        <xs:keyref name="keyref3" refer="key3">
+        <xs:keyref name="keyref2" refer="key3">
             <xs:selector xpath="peldany" />
             <xs:field xpath="@katalogusszam" />
         </xs:keyref> 
-        <xs:keyref name="keyref4" refer="key3">
-            <xs:selector xpath="peldany" />
-            <xs:field xpath="@kolcsonzo" />
+        <xs:keyref name="keyref3" refer="key3">
+            <xs:selector xpath="kolcsonzes" />
+            <xs:field xpath="@pid" />
+        </xs:keyref>
+        <xs:keyref name="keyref4" refer="key4">
+            <xs:selector xpath="kolcsonzes" />
+            <xs:field xpath="@id" />
         </xs:keyref>
     </xs:element>
     
@@ -82,7 +89,7 @@
         <xs:sequence>
             <xs:element name="cim" type="xs:string"/>
             <xs:element name="mufaj" type="xs:string"/>
-            <xs:element name="kiadaseve">
+            <xs:element name="megjeleneseve">
                 <xs:simpleType>
                     <xs:restriction base="xs:integer">
                         <xs:minInclusive value="1857" />
@@ -99,10 +106,35 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
+        <xs:attribute name="eid" type="xs:int" use="required"/>
     </xs:complexType>
     
     <xs:complexType name="peldanyTipus">
         <xs:sequence>
+            <xs:element name="kiadaseve">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="1857" />
+                        <xs:maxInclusive value="2019" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="formatumt">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="LP"/>
+                        <xs:enumeration value="EP"/>
+                        <xs:enumeration value="SP"/>
+                        <xs:enumeration value="Flexi disc"/>
+                        <xs:enumeration value="8-track"/>
+                        <xs:enumeration value="Kazetta"/>
+                        <xs:enumeration value="CD"/>
+                        <xs:enumeration value="mini CD"/>
+                        <xs:enumeration value="DVD-AUDIO"/>
+                        <xs:enumeration value="sdCard"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
             <xs:element name="allapot">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
@@ -117,11 +149,25 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element name="tol" type="xs:date"/>
-            <xs:element name="ig" type="xs:date"/>
-            <xs:element name="visszahozva" type="xs:boolean" default="false"/>
         </xs:sequence>
         <xs:attribute name="pid" type="xs:int" use="required"/>
+        <xs:attribute name="katalogusszam" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[A-Z]*-[0-9]*"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    
+    <xs:complexType name="kolcsonzesTipus">
+        <xs:sequence>
+            <xs:element name="mettol" type="xs:date"/>
+            <xs:element name="meddig" type="xs:date"/>
+            <xs:element name="visszahozva" type="xs:boolean" default="false"/>
+        </xs:sequence>
+        <xs:attribute name="pid" type="xs:int" use="required" />
+        <xs:attribute name="id" type="xs:int" use="required" />
     </xs:complexType>
                 
     <xs:complexType name="kolcsonzoTipus">
