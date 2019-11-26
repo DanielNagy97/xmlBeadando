@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lemezkolcsonzo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/home/dante/oxygen%20proba/Untitled.xsd">
+    <eloadok>
+        <eloado eloadoref="0">
+            <nev>Black Sabbath</nev>
+            <orszag>Anglia</orszag>
+        </eloado>
+        <eloado eloadoref="1">
+            <nev>Pink Floyd</nev>
+            <orszag>Anglia</orszag>
+        </eloado>
+        <eloado eloadoref="2">
+            <nev>The Doors</nev>
+            <orszag>USA</orszag>
+        </eloado>
+        <eloado eloadoref="3">
+            <nev>Edda művek</nev>
+            <orszag>Magyarország</orszag>
+        </eloado>
+    </eloadok>
+    <albumok>
+        <album katalogusszam="NEL-6018" eloadoref="0">
+            <cim>Sabotage</cim>
+            <mufaj>metal</mufaj>
+            <megjeleneseve>1975</megjeleneseve>
+        </album>
+        <album katalogusszam="2220377" eloadoref="0">
+            <cim>Heaven and Hell</cim>
+            <mufaj>metal</mufaj>
+            <megjeleneseve>1980</megjeleneseve>
+        </album>
+        <album katalogusszam="PFRLP-10" eloadoref="1">
+            <cim>Animals</cim>
+            <mufaj>progressive rock</mufaj>
+            <megjeleneseve>1976</megjeleneseve>
+        </album>
+        <album katalogusszam="PFRLP-8" eloadoref="1">
+            <cim>The Dark Side of The Moon</cim>
+            <mufaj>progressive rock</mufaj>
+            <megjeleneseve>1973</megjeleneseve>
+        </album>
+        <album katalogusszam="ELK-442090" eloadoref="2">
+            <cim>L.A. Woman</cim>
+            <mufaj>blues</mufaj>
+            <megjeleneseve>1971</megjeleneseve>
+        </album>
+        <album katalogusszam="SLPX-17631" eloadoref="3">
+            <cim>Edda művek 1</cim>
+            <mufaj>rock</mufaj>
+            <megjeleneseve>1980</megjeleneseve>
+        </album>
+        <album katalogusszam="SLPX-17664" eloadoref="3">
+            <cim>Edda művek 2</cim>
+            <mufaj>rock</mufaj>
+            <megjeleneseve>1981</megjeleneseve>
+        </album>
+        <album katalogusszam="SLPM-17773" eloadoref="3">
+            <cim>Edda művek 3</cim>
+            <mufaj>rock</mufaj>
+            <megjeleneseve>1983</megjeleneseve>
+        </album>
+    </albumok>
+    <peldanyok>
+        <peldany peldanyref="0" katalogusszam="NEL-6018">
+            <kiadaseve>1980</kiadaseve>
+            <formatumt>LP</formatumt>
+            <allapot>Near Mint</allapot>
+        </peldany>
+        <peldany peldanyref="1" katalogusszam="NEL-6018">
+            <kiadaseve>1980</kiadaseve>
+            <formatumt>LP</formatumt>
+            <allapot>Very Good</allapot>
+        </peldany>
+        <peldany peldanyref="2" katalogusszam="NEL-6018">
+            <kiadaseve>1975</kiadaseve>
+            <formatumt>LP</formatumt>
+            <allapot>Good</allapot>
+        </peldany>
+        <peldany peldanyref="3" katalogusszam="2220377">
+            <kiadaseve>1980</kiadaseve>
+            <formatumt>LP</formatumt>
+            <allapot>Very Good</allapot>
+        </peldany>
+        <peldany peldanyref="4" katalogusszam="PFRLP-10">
+            <kiadaseve>2016</kiadaseve>
+            <formatumt>LP</formatumt>
+            <allapot>Mint</allapot>
+        </peldany>
+        <peldany peldanyref="5" katalogusszam="ELK-442090">
+            <kiadaseve>1983</kiadaseve>
+            <formatumt>LP</formatumt>
+            <allapot>Good</allapot>
+        </peldany>
+        <peldany peldanyref="6" katalogusszam="PFRLP-8">
+            <kiadaseve>2016</kiadaseve>
+            <formatumt>LP</formatumt>
+            <allapot>Near Mint</allapot>
+        </peldany>
+        <peldany peldanyref="7" katalogusszam="SLPX-17631">
+            <kiadaseve>1980</kiadaseve>
+            <formatumt>LP</formatumt>
+            <allapot>Very Good</allapot>
+        </peldany>
+        <peldany peldanyref="8" katalogusszam="SLPX-17664">
+            <kiadaseve>1981</kiadaseve>
+            <formatumt>LP</formatumt>
+            <allapot>Very Good Plus</allapot>
+        </peldany>
+        <peldany peldanyref="9" katalogusszam="SLPM-17773">
+            <kiadaseve>1983</kiadaseve>
+            <formatumt>LP</formatumt>
+            <allapot>Good</allapot>
+        </peldany>
+    </peldanyok>
+    <kolcsonzesek>
+        <kolcsonzes peldanyref="0" kolcsonzoref="0">
+            <mettol>2006-05-04</mettol>
+            <meddig>2006-05-04</meddig>
+            <visszahozva>false</visszahozva>
+        </kolcsonzes>
+        <kolcsonzes peldanyref="1" kolcsonzoref="3">
+            <mettol>2006-05-04</mettol>
+            <meddig>2006-05-04</meddig>
+            <visszahozva>false</visszahozva>
+        </kolcsonzes>
+        <kolcsonzes peldanyref="2" kolcsonzoref="2">
+            <mettol>2006-05-04</mettol>
+            <meddig>2006-05-04</meddig>
+            <visszahozva>false</visszahozva>
+        </kolcsonzes>
+        <kolcsonzes peldanyref="3" kolcsonzoref="1">
+            <mettol>2006-05-04</mettol>
+            <meddig>2006-05-04</meddig>
+            <visszahozva>false</visszahozva>
+        </kolcsonzes>
+    </kolcsonzesek>
+    <kolcsonzok>
+        <kolcsonzo kolcsonzoref="0">
+            <nev>nev4</nev>
+            <telefon>06 00 000 0000</telefon>
+            <lakcim>
+                <iranyitoszam>5500</iranyitoszam>
+                <varos>varos0</varos>
+                <utca>utca0</utca>
+                <hazszam>0</hazszam>
+            </lakcim>
+        </kolcsonzo>
+        <kolcsonzo kolcsonzoref="1">
+            <nev>nev5</nev>
+            <telefon>06 00 000 0000</telefon>
+            <lakcim>
+                <iranyitoszam>5500</iranyitoszam>
+                <varos>varos1</varos>
+                <utca>utca1</utca>
+                <hazszam>0</hazszam>
+            </lakcim>
+        </kolcsonzo>
+        <kolcsonzo kolcsonzoref="2">
+            <nev>nev6</nev>
+            <telefon>06 00 000 0000</telefon>
+            <lakcim>
+                <iranyitoszam>5500</iranyitoszam>
+                <varos>varos2</varos>
+                <utca>utca2</utca>
+                <hazszam>0</hazszam>
+            </lakcim>
+        </kolcsonzo>
+        <kolcsonzo kolcsonzoref="3">
+            <nev>nev7</nev>
+            <telefon>06 00 000 0000</telefon>
+            <lakcim>
+                <iranyitoszam>5500</iranyitoszam>
+                <varos>varos3</varos>
+                <utca>utca3</utca>
+                <hazszam>0</hazszam>
+            </lakcim>
+        </kolcsonzo>
+    </kolcsonzok>
+</lemezkolcsonzo>
