@@ -115,65 +115,65 @@
     </peldanyok>
     <kolcsonzesek>
         <kolcsonzes peldanyref="0" kolcsonzoref="0">
-            <mettol>2006-05-04</mettol>
-            <meddig>2006-05-04</meddig>
+            <mettol>2019-11-26</mettol>
+            <meddig>2019-12-04</meddig>
             <visszahozva>false</visszahozva>
         </kolcsonzes>
         <kolcsonzes peldanyref="1" kolcsonzoref="3">
-            <mettol>2006-05-04</mettol>
-            <meddig>2006-05-04</meddig>
-            <visszahozva>false</visszahozva>
+            <mettol>2019-05-04</mettol>
+            <meddig>2019-05-30</meddig>
+            <visszahozva>true</visszahozva>
         </kolcsonzes>
         <kolcsonzes peldanyref="2" kolcsonzoref="2">
-            <mettol>2006-05-04</mettol>
-            <meddig>2006-05-04</meddig>
+            <mettol>2019-05-04</mettol>
+            <meddig>2019-10-04</meddig>
             <visszahozva>false</visszahozva>
         </kolcsonzes>
         <kolcsonzes peldanyref="3" kolcsonzoref="1">
-            <mettol>2006-05-04</mettol>
-            <meddig>2006-05-04</meddig>
+            <mettol>2019-11-04</mettol>
+            <meddig>2019-12-24</meddig>
             <visszahozva>false</visszahozva>
         </kolcsonzes>
     </kolcsonzesek>
     <kolcsonzok>
         <kolcsonzo kolcsonzoref="0">
             <nev>nev4</nev>
-            <telefon>06 00 000 0000</telefon>
+            <telefon>06 20 320 0540</telefon>
             <lakcim>
                 <iranyitoszam>5500</iranyitoszam>
                 <varos>varos0</varos>
                 <utca>utca0</utca>
-                <hazszam>0</hazszam>
+                <hazszam>12</hazszam>
             </lakcim>
         </kolcsonzo>
         <kolcsonzo kolcsonzoref="1">
             <nev>nev5</nev>
-            <telefon>06 00 000 0000</telefon>
+            <telefon>06 20 032 5632</telefon>
             <lakcim>
-                <iranyitoszam>5500</iranyitoszam>
+                <iranyitoszam>3300</iranyitoszam>
                 <varos>varos1</varos>
                 <utca>utca1</utca>
-                <hazszam>0</hazszam>
+                <hazszam>33</hazszam>
             </lakcim>
         </kolcsonzo>
         <kolcsonzo kolcsonzoref="2">
             <nev>nev6</nev>
-            <telefon>06 00 000 0000</telefon>
+            <telefon>06 30 650 0110</telefon>
             <lakcim>
-                <iranyitoszam>5500</iranyitoszam>
+                <iranyitoszam>3300</iranyitoszam>
                 <varos>varos2</varos>
                 <utca>utca2</utca>
-                <hazszam>0</hazszam>
+                <hazszam>2</hazszam>
             </lakcim>
         </kolcsonzo>
         <kolcsonzo kolcsonzoref="3">
             <nev>nev7</nev>
-            <telefon>06 00 000 0000</telefon>
+            <telefon>06 70 420 0693</telefon>
             <lakcim>
-                <iranyitoszam>5500</iranyitoszam>
+                <iranyitoszam>4300</iranyitoszam>
                 <varos>varos3</varos>
                 <utca>utca3</utca>
-                <hazszam>0</hazszam>
+                <hazszam>23</hazszam>
             </lakcim>
         </kolcsonzo>
     </kolcsonzok>
