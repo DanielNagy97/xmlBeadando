@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="beadando.xsl"?>
 <lemezkolcsonzo xmlns="beadando" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="beadando beadando.xsd ">
-    <eloadok>
+
         <eloado eloadoref="0">
             <nev>Black Sabbath</nev>
             <orszag>Anglia</orszag>
@@ -19,8 +19,7 @@
             <nev>Edda művek</nev>
             <orszag>Magyarország</orszag>
         </eloado>
-    </eloadok>
-    <albumok>
+
         <album katalogusszam="NEL-6018" eloadoref="0">
             <cim>Sabotage</cim>
             <mufaj>metal</mufaj>
@@ -71,80 +70,78 @@
             <mufaj>rock</mufaj>
             <megjeleneseve>1983</megjeleneseve>
         </album>
-    </albumok>
-    <peldanyok>
+
         <peldany peldanyref="0" katalogusszam="NEL-6018">
             <kiadaseve>1980</kiadaseve>
-            <formatumt>LP</formatumt>
+            <formatum>LP</formatum>
             <allapot>Near Mint</allapot>
         </peldany>
         <peldany peldanyref="1" katalogusszam="NEL-6018">
             <kiadaseve>1980</kiadaseve>
-            <formatumt>8-track</formatumt>
+            <formatum>8-track</formatum>
             <allapot>Very Good</allapot>
         </peldany>
         <peldany peldanyref="2" katalogusszam="NEL-6018">
             <kiadaseve>2000</kiadaseve>
-            <formatumt>DVD-AUDIO</formatumt>
+            <formatum>DVD-AUDIO</formatum>
             <allapot>Poor</allapot>
         </peldany>
         <peldany peldanyref="3" katalogusszam="2220377">
             <kiadaseve>1980</kiadaseve>
-            <formatumt>LP</formatumt>
+            <formatum>LP</formatum>
             <allapot>Very Good</allapot>
         </peldany>
         <peldany peldanyref="4" katalogusszam="PFRLP-10">
             <kiadaseve>2016</kiadaseve>
-            <formatumt>LP</formatumt>
+            <formatum>LP</formatum>
             <allapot>Mint</allapot>
         </peldany>
         <peldany peldanyref="5" katalogusszam="ELK-442090">
             <kiadaseve>1983</kiadaseve>
-            <formatumt>Kazetta</formatumt>
+            <formatum>Kazetta</formatum>
             <allapot>Good</allapot>
         </peldany>
         <peldany peldanyref="6" katalogusszam="PFRLP-8">
             <kiadaseve>2016</kiadaseve>
-            <formatumt>LP</formatumt>
+            <formatum>LP</formatum>
             <allapot>Near Mint</allapot>
         </peldany>
         <peldany peldanyref="7" katalogusszam="LSHV-73019">
             <kiadaseve>1971</kiadaseve>
-            <formatumt>LP</formatumt>
+            <formatum>LP</formatum>
             <allapot>Mint</allapot>
         </peldany>
         <peldany peldanyref="8" katalogusszam="LSHV-73019">
             <kiadaseve>1976</kiadaseve>
-            <formatumt>Kazetta</formatumt>
+            <formatum>Kazetta</formatum>
             <allapot>Good</allapot>
         </peldany>
         <peldany peldanyref="9" katalogusszam="LSHV-73019">
             <kiadaseve>1993</kiadaseve>
-            <formatumt>CD</formatumt>
+            <formatum>CD</formatum>
             <allapot>Very Good</allapot>
         </peldany>
         <peldany peldanyref="10" katalogusszam="400010">
             <kiadaseve>1975</kiadaseve>
-            <formatumt>LP</formatumt>
+            <formatum>LP</formatum>
             <allapot>Near Mint</allapot>
         </peldany>
         <peldany peldanyref="11" katalogusszam="SLPX-17631">
             <kiadaseve>1980</kiadaseve>
-            <formatumt>LP</formatumt>
+            <formatum>LP</formatum>
             <allapot>Very Good</allapot>
         </peldany>
         <peldany peldanyref="12" katalogusszam="SLPX-17664">
             <kiadaseve>1981</kiadaseve>
-            <formatumt>LP</formatumt>
+            <formatum>LP</formatum>
             <allapot>Very Good Plus</allapot>
         </peldany>
         <peldany peldanyref="13" katalogusszam="SLPM-17773">
             <kiadaseve>1983</kiadaseve>
-            <formatumt>LP</formatumt>
+            <formatum>LP</formatum>
             <allapot>Good</allapot>
         </peldany>
-    </peldanyok>
-    <kolcsonzesek>
+
         <kolcsonzes peldanyref="0" kolcsonzoref="0">
             <mettol>2019-11-26</mettol>
             <meddig>2019-12-04</meddig>
@@ -180,10 +177,10 @@
             <meddig>2019-10-04</meddig>
             <visszahozva>false</visszahozva>
         </kolcsonzes>
-        <kolcsonzes peldanyref="3" kolcsonzoref="3">
+        <kolcsonzes peldanyref="10" kolcsonzoref="3">
             <mettol>2019-11-04</mettol>
             <meddig>2019-12-24</meddig>
-            <visszahozva>false</visszahozva>
+            <visszahozva>true</visszahozva>
         </kolcsonzes>
         <kolcsonzes peldanyref="8" kolcsonzoref="3">
             <mettol>2019-11-04</mettol>
@@ -195,8 +192,7 @@
             <meddig>2019-12-24</meddig>
             <visszahozva>false</visszahozva>
         </kolcsonzes>
-    </kolcsonzesek>
-    <kolcsonzok>
+
         <kolcsonzo kolcsonzoref="0">
             <nev>Wincs Eszter</nev>
             <telefon>06 20 320 0540</telefon>
@@ -237,5 +233,5 @@
                 <hazszam>23</hazszam>
             </lakcim>
         </kolcsonzo>
-    </kolcsonzok>
+
 </lemezkolcsonzo>
