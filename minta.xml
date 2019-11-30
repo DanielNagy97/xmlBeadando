@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="beadando.xsl"?>
+<lemezkolcsonzo xmlns="beadando" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="beadando beadando.xsd ">
+    <eloado eloadoref="0">
+        <nev>Black Sabbath</nev>
+        <orszag>Anglia</orszag>
+    </eloado>
+    <eloado eloadoref="1">
+        <nev>Pink Floyd</nev>
+        <orszag>Anglia</orszag>
+    </eloado>
+    <eloado eloadoref="2">
+        <nev>The Doors</nev>
+        <orszag>USA</orszag>
+    </eloado>
+    <eloado eloadoref="3">
+        <nev>Edda művek</nev>
+        <orszag>Magyarország</orszag>
+    </eloado>
+    
+    <album katalogusszam="NEL-6018" eloadoref="0">
+        <cim>Sabotage</cim>
+        <mufaj>metal</mufaj>
+        <megjeleneseve>1975</megjeleneseve>
+    </album>
+    <album katalogusszam="2220377" eloadoref="0">
+        <cim>Heaven and Hell</cim>
+        <mufaj>metal</mufaj>
+        <megjeleneseve>1980</megjeleneseve>
+    </album>
+    <album katalogusszam="PFRLP-10" eloadoref="1">
+        <cim>Animals</cim>
+        <mufaj>progressive rock</mufaj>
+        <megjeleneseve>1976</megjeleneseve>
+    </album>
+    <album katalogusszam="PFRLP-8" eloadoref="1">
+        <cim>The Dark Side of The Moon</cim>
+        <mufaj>progressive rock</mufaj>
+        <megjeleneseve>1973</megjeleneseve>
+    </album>
+    <album katalogusszam="LSHV-73019" eloadoref="1">
+        <cim>Meddle</cim>
+        <mufaj>progressive rock</mufaj>
+        <megjeleneseve>1971</megjeleneseve>
+    </album>
+    <album katalogusszam="400010" eloadoref="1">
+        <cim>Wish You Were Here</cim>
+        <mufaj>progressive rock</mufaj>
+        <megjeleneseve>1975</megjeleneseve>
+    </album>
+    <album katalogusszam="ELK-442090" eloadoref="2">
+        <cim>L.A. Woman</cim>
+        <mufaj>blues</mufaj>
+        <megjeleneseve>1971</megjeleneseve>
+    </album>
+    <album katalogusszam="SLPX-17631" eloadoref="3">
+        <cim>Edda művek 1</cim>
+        <mufaj>rock</mufaj>
+        <megjeleneseve>1980</megjeleneseve>
+    </album>
+    <album katalogusszam="SLPX-17664" eloadoref="3">
+        <cim>Edda művek 2</cim>
+        <mufaj>rock</mufaj>
+        <megjeleneseve>1981</megjeleneseve>
+    </album>
+    <album katalogusszam="SLPM-17773" eloadoref="3">
+        <cim>Edda művek 3</cim>
+        <mufaj>rock</mufaj>
+        <megjeleneseve>1983</megjeleneseve>
+    </album>
+
+    <peldany peldanyref="0" katalogusszam="NEL-6018">
+        <kiadaseve>1980</kiadaseve>
+        <formatum>LP</formatum>
+        <allapot>Near Mint</allapot>
+    </peldany>
+    <peldany peldanyref="1" katalogusszam="NEL-6018">
+        <kiadaseve>1980</kiadaseve>
+        <formatum>8-track</formatum>
+        <allapot>Very Good</allapot>
+    </peldany>
+    <peldany peldanyref="2" katalogusszam="NEL-6018">
+        <kiadaseve>2000</kiadaseve>
+        <formatum>DVD-AUDIO</formatum>
+        <allapot>Poor</allapot>
+    </peldany>
+    <peldany peldanyref="3" katalogusszam="2220377">
+        <kiadaseve>1980</kiadaseve>
+        <formatum>LP</formatum>
+        <allapot>Very Good</allapot>
+    </peldany>
+    <peldany peldanyref="4" katalogusszam="PFRLP-10">
+        <kiadaseve>2016</kiadaseve>
+        <formatum>LP</formatum>
+        <allapot>Mint</allapot>
+    </peldany>
+    <peldany peldanyref="5" katalogusszam="ELK-442090">
+        <kiadaseve>1983</kiadaseve>
+        <formatum>Kazetta</formatum>
+        <allapot>Good</allapot>
+    </peldany>
+    <peldany peldanyref="6" katalogusszam="PFRLP-8">
+        <kiadaseve>2016</kiadaseve>
+        <formatum>LP</formatum>
+        <allapot>Near Mint</allapot>
+    </peldany>
+    <peldany peldanyref="7" katalogusszam="LSHV-73019">
+        <kiadaseve>1971</kiadaseve>
+        <formatum>LP</formatum>
+        <allapot>Mint</allapot>
+    </peldany>
+    <peldany peldanyref="8" katalogusszam="LSHV-73019">
+        <kiadaseve>1976</kiadaseve>
+        <formatum>Kazetta</formatum>
+        <allapot>Good</allapot>
+    </peldany>
+    <peldany peldanyref="9" katalogusszam="LSHV-73019">
+        <kiadaseve>1993</kiadaseve>
+        <formatum>CD</formatum>
+        <allapot>Very Good</allapot>
+    </peldany>
+    <peldany peldanyref="10" katalogusszam="400010">
+        <kiadaseve>1975</kiadaseve>
+        <formatum>LP</formatum>
+        <allapot>Near Mint</allapot>
+    </peldany>
+    <peldany peldanyref="11" katalogusszam="SLPX-17631">
+        <kiadaseve>1980</kiadaseve>
+        <formatum>LP</formatum>
+        <allapot>Very Good</allapot>
+    </peldany>
+    <peldany peldanyref="12" katalogusszam="SLPX-17664">
+        <kiadaseve>1981</kiadaseve>
+        <formatum>LP</formatum>
+        <allapot>Very Good Plus</allapot>
+    </peldany>
+    <peldany peldanyref="13" katalogusszam="SLPM-17773">
+        <kiadaseve>1983</kiadaseve>
+        <formatum>LP</formatum>
+        <allapot>Good</allapot>
+    </peldany>
+    
+    <kolcsonzes peldanyref="1" kolcsonzoref="1">
+        <mettol>2019-05-04</mettol>
+        <meddig>2019-05-30</meddig>
+        <visszahozva>true</visszahozva>
+    </kolcsonzes>
+    <kolcsonzes peldanyref="0" kolcsonzoref="0">
+        <mettol>2019-05-26</mettol>
+        <meddig>2019-06-26</meddig>
+        <visszahozva>false</visszahozva>
+    </kolcsonzes>
+    <kolcsonzes peldanyref="3" kolcsonzoref="0">
+        <mettol>2019-05-30</mettol>
+        <meddig>2019-06-30</meddig>
+        <visszahozva>true</visszahozva>
+    </kolcsonzes>
+    <kolcsonzes peldanyref="11" kolcsonzoref="0">
+        <mettol>2019-09-26</mettol>
+        <meddig>2019-10-26</meddig>
+        <visszahozva>true</visszahozva>
+    </kolcsonzes>
+    <kolcsonzes peldanyref="5" kolcsonzoref="1">
+        <mettol>2019-10-04</mettol>
+        <meddig>2019-11-30</meddig>
+        <visszahozva>false</visszahozva>
+    </kolcsonzes>
+    <kolcsonzes peldanyref="2" kolcsonzoref="2">
+        <mettol>2019-11-04</mettol>
+        <meddig>2019-12-04</meddig>
+        <visszahozva>false</visszahozva>
+    </kolcsonzes>
+    <kolcsonzes peldanyref="9" kolcsonzoref="2">
+        <mettol>2019-11-04</mettol>
+        <meddig>2019-11-24</meddig>
+        <visszahozva>false</visszahozva>
+    </kolcsonzes>
+    <kolcsonzes peldanyref="3" kolcsonzoref="3">
+        <mettol>2019-11-04</mettol>
+        <meddig>2019-11-29</meddig>
+        <visszahozva>false</visszahozva>
+    </kolcsonzes>
+    <kolcsonzes peldanyref="8" kolcsonzoref="3">
+        <mettol>2019-11-12</mettol>
+        <meddig>2019-12-12</meddig>
+        <visszahozva>false</visszahozva>
+    </kolcsonzes>
+    <kolcsonzes peldanyref="6" kolcsonzoref="3">
+        <mettol>2019-11-24</mettol>
+        <meddig>2019-12-24</meddig>
+        <visszahozva>false</visszahozva>
+    </kolcsonzes>
+    
+    <kolcsonzo kolcsonzoref="0">
+        <nev>Wincs Eszter</nev>
+        <telefon>06 20 320 0540</telefon>
+        <lakcim>
+            <iranyitoszam>5500</iranyitoszam>
+            <varos>varos0</varos>
+            <utca>utca0</utca>
+            <hazszam>12</hazszam>
+        </lakcim>
+    </kolcsonzo>
+    <kolcsonzo kolcsonzoref="1">
+        <nev>Koaxk Ábel</nev>
+        <telefon>06 20 032 5632</telefon>
+        <lakcim>
+            <iranyitoszam>3300</iranyitoszam>
+            <varos>varos1</varos>
+            <utca>utca1</utca>
+            <hazszam>33</hazszam>
+        </lakcim>
+    </kolcsonzo>
+    <kolcsonzo kolcsonzoref="2">
+        <nev>Techno Kolos</nev>
+        <telefon>06 30 650 0110</telefon>
+        <lakcim>
+            <iranyitoszam>3300</iranyitoszam>
+            <varos>varos2</varos>
+            <utca>utca2</utca>
+            <hazszam>2</hazszam>
+        </lakcim>
+    </kolcsonzo>
+    <kolcsonzo kolcsonzoref="3">
+        <nev>Metall Ica</nev>
+        <telefon>06 70 420 0693</telefon>
+        <lakcim>
+            <iranyitoszam>4300</iranyitoszam>
+            <varos>varos3</varos>
+            <utca>utca3</utca>
+            <hazszam>23</hazszam>
+        </lakcim>
+    </kolcsonzo>
+   
+</lemezkolcsonzo>

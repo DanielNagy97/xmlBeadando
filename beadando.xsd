@@ -1,44 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="beadando" xmlns="beadando" elementFormDefault="qualified">
     <xs:element name="lemezkolcsonzo">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="eloadok">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="eloado" type="eloadoTipus" minOccurs="0" maxOccurs="unbounded"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="albumok">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="album" type="albumTipus" minOccurs="0" maxOccurs="unbounded"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="peldanyok">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="peldany" type="peldanyTipus" minOccurs="0" maxOccurs="unbounded"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="kolcsonzesek">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="kolcsonzes" type="kolcsonzesTipus" minOccurs="0" maxOccurs="unbounded"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="kolcsonzok">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="kolcsonzo" type="kolcsonzoTipus" minOccurs="0" maxOccurs="unbounded"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
+                <xs:element name="eloado" type="eloadoTipus" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="album" type="albumTipus" minOccurs="0" maxOccurs="unbounded"/> 
+                <xs:element name="peldany" type="peldanyTipus" minOccurs="0" maxOccurs="unbounded"/>        
+                <xs:element name="kolcsonzes" type="kolcsonzesTipus" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="kolcsonzo" type="kolcsonzoTipus" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
         
@@ -63,7 +32,7 @@
             <xs:selector xpath="album" />
             <xs:field xpath="@eloadoref" />
         </xs:keyref>
-        <xs:keyref name="keyref2" refer="key3">
+        <xs:keyref name="keyref2" refer="key2">
             <xs:selector xpath="peldany" />
             <xs:field xpath="@katalogusszam" />
         </xs:keyref> 
@@ -119,7 +88,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element name="formatumt">
+            <xs:element name="formatum">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:enumeration value="LP"/>
