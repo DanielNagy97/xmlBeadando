@@ -8,25 +8,34 @@
             <head></head>
             <body>
                 <h1>XSL lekérdezések</h1>
-                <h2>1.Albumok és előadók</h2>
+                <h2>1.A Mint és Near Mint állapotú pédányok adatai</h2>
                 <table border="1">
                     <tr>
-                        <th>Album</th>
+                        <th>Album címe</th>
                         <th>Előadó</th>
+                        <th>Műfaj</th>
+                        <th>Állapot</th>
+                        <th>Formátum</th>
                     </tr>
-                    <xsl:for-each select="e:album">
+                    <xsl:for-each select="e:peldany[e:allapot = 'Mint' or e:allapot = 'Near Mint']">
                         <tr>
+                            <xsl:variable name="katalogusszam" select="@katalogusszam" />
+                            <xsl:variable name="album" select="../e:album[$katalogusszam = @katalogusszam]" />
                             <td>
-                                <xsl:value-of select="e:cim" />
+                                <xsl:value-of select="$album/e:cim" />
                             </td>
-                            <xsl:variable name="eloadoref" select="@eloadoref" />
-                            <xsl:for-each select="../e:eloado">
-                                <xsl:if test="$eloadoref = @eloadoref">
-                                    <td>
-                                        <xsl:value-of select="e:nev" />
-                                    </td>
-                                </xsl:if>
-                            </xsl:for-each>
+                            <td>
+                                <xsl:value-of select="../e:eloado[$album/@eloadoref = @eloadoref]/e:nev" />
+                            </td>
+                            <td>
+                                <xsl:value-of select="$album/e:mufaj" />
+                            </td>
+                            <td>
+                                <xsl:value-of select="e:allapot" />
+                            </td>
+                            <td>
+                                <xsl:value-of select="e:formatum" />
+                            </td>
                         </tr>
                     </xsl:for-each>
                 </table>
