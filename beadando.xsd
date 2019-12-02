@@ -3,11 +3,41 @@
     <xs:element name="lemezkolcsonzo">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="eloado" type="eloadoTipus" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="album" type="albumTipus" minOccurs="0" maxOccurs="unbounded"/> 
-                <xs:element name="peldany" type="peldanyTipus" minOccurs="0" maxOccurs="unbounded"/>        
-                <xs:element name="kolcsonzes" type="kolcsonzesTipus" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="kolcsonzo" type="kolcsonzoTipus" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="eloadok">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="eloado" type="eloadoTipus" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="albumok">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="album" type="albumTipus" minOccurs="0" maxOccurs="unbounded"/> 
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="peldanyok">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="peldany" type="peldanyTipus" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="kolcsonzesek">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="kolcsonzes" type="kolcsonzesTipus" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="kolcsonzok">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="kolcsonzo" type="kolcsonzoTipus" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
         </xs:complexType>
         
@@ -66,8 +96,8 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-
         </xs:sequence>
+        
         <xs:attribute name="katalogusszam" use="required">
             <xs:simpleType>
                 <xs:restriction base="xs:string">

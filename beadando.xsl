@@ -17,15 +17,15 @@
                         <th>Állapot</th>
                         <th>Formátum</th>
                     </tr>
-                    <xsl:for-each select="e:peldany[e:allapot = 'Mint' or e:allapot = 'Near Mint']">
+                    <xsl:for-each select="e:peldanyok/e:peldany[e:allapot = 'Mint' or e:allapot = 'Near Mint']">
                         <tr>
                             <xsl:variable name="katalogusszam" select="@katalogusszam" />
-                            <xsl:variable name="album" select="../e:album[$katalogusszam = @katalogusszam]" />
+                            <xsl:variable name="album" select="../../e:albumok/e:album[$katalogusszam = @katalogusszam]" />
                             <td>
                                 <xsl:value-of select="$album/e:cim" />
                             </td>
                             <td>
-                                <xsl:value-of select="../e:eloado[$album/@eloadoref = @eloadoref]/e:nev" />
+                                <xsl:value-of select="../../e:eloadok/e:eloado[$album/@eloadoref = @eloadoref]/e:nev" />
                             </td>
                             <td>
                                 <xsl:value-of select="$album/e:mufaj" />
@@ -49,10 +49,10 @@
                         <th>Állapot</th>
                         <th>Elérhető?</th>
                     </tr>
-                    <xsl:for-each select="e:peldany[e:formatum = 'LP']">
+                    <xsl:for-each select="e:peldanyok/e:peldany[e:formatum = 'LP']">
                         <tr>
                             <xsl:variable name="katalogusszam" select="@katalogusszam" />
-                            <xsl:for-each select="../e:album">
+                            <xsl:for-each select="../../e:albumok/e:album">
                                 <xsl:if test="$katalogusszam = @katalogusszam">
                                     <td>
                                         <xsl:value-of select="e:cim" />
@@ -69,7 +69,7 @@
                                 <xsl:value-of select="e:allapot" />
                             </td>
                             <xsl:variable name="peldanyref" select="@peldanyref" />
-                            <xsl:variable name="kolcsonozve" select="(../e:kolcsonzes[@peldanyref = $peldanyref])[last()]/e:visszahozva" />
+                            <xsl:variable name="kolcsonozve" select="(../../e:kolcsonzesek/e:kolcsonzes[@peldanyref = $peldanyref])[last()]/e:visszahozva" />
                             <xsl:if test="boolean($kolcsonozve)">
                                 <xsl:choose>
                                     <xsl:when test="$kolcsonozve = 'false'">
@@ -100,10 +100,10 @@
                         <th>Album formátuma</th>
                         <th>Határidő</th>
                     </tr>
-                    <xsl:for-each select="e:kolcsonzes[concat(concat(substring(e:meddig,1,4),substring(e:meddig,6,2)),substring(e:meddig,9,2)) &lt; $currentFormattedDate and e:visszahozva = 'false']">
+                    <xsl:for-each select="e:kolcsonzesek/e:kolcsonzes[concat(concat(substring(e:meddig,1,4),substring(e:meddig,6,2)),substring(e:meddig,9,2)) &lt; $currentFormattedDate and e:visszahozva = 'false']">
                         <tr>
                             <xsl:variable name="kolcsonzoref" select="@kolcsonzoref" />
-                            <xsl:for-each select="../e:kolcsonzo">
+                            <xsl:for-each select="../../e:kolcsonzok/e:kolcsonzo">
                                 <xsl:if test="$kolcsonzoref = @kolcsonzoref">
                                     <td>
                                         <xsl:value-of select="e:nev" />
@@ -117,10 +117,10 @@
                                 </xsl:if>
                             </xsl:for-each>
                             <xsl:variable name="peldanyref" select="@peldanyref" />
-                            <xsl:for-each select="../e:peldany">
+                            <xsl:for-each select="../../e:peldanyok/e:peldany">
                                 <xsl:if test="$peldanyref = @peldanyref">
                                     <xsl:variable name="katalogusszam" select="@katalogusszam" />
-                                    <xsl:for-each select="../e:album">
+                                    <xsl:for-each select="../../e:albumok/e:album">
                                         <xsl:if test="$katalogusszam = @katalogusszam">
                                             <td>
                                                 <xsl:value-of select="e:cim" />
