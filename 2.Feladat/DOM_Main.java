@@ -1,8 +1,11 @@
 package xml_DOM;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -42,19 +45,75 @@ public class DOM_Main {
 			documentBuilder.setErrorHandler(new LemezErrorHandler());
 			Document document = documentBuilder.parse(new File(INPUT_FILE_PATH));
 			
-			System.out.print("Root element: ");
-			System.out.println(document.getDocumentElement().getNodeName());
-			
-			addAlbum(document, new Album("Proba cim","Metal",1987,"Eloado neve","AFR-41212"));
-			addEloado(document, new Eloado("Eloado neve","Orszagaaa"));
-			addAlbum(document, new Album("Proba cim","Metal",1987,"Eloado neve","AFR-41212"));
-			modifyEloado(document, new Eloado("Black Sabbath","Anglia"), new Eloado("Előadó név új","Újország"));
-			
-			if (PRINT_TO_CONSOLE) {
-				printDocument(document);
-			} else {
-				printDocument(document, new File(OUTPUT_FILE_PATH));
+			Scanner sc = new Scanner(System.in);
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+			while(true) {
+				System.out.println("-------------------");
+				System.out.println("1. Album hozzáadása");
+				System.out.println("2. Előadó hozzáadása");
+				System.out.println("3. Előadó módosítása");
+				System.out.println("4. Lekérdezés");
+				System.out.println("5. XML kiírása");
+				System.out.println("6. Kilépés");
+				int menu = Integer.parseInt(sc.next());
+				System.out.println(menu);
+				switch(menu) {
+				case 1:
+					Album album = new Album();
+					System.out.println("Kérem adja meg az album címét:");
+					album.setCim(br.readLine());
+					System.out.println("Kérem adja meg az album műfaját:");
+					album.setMufaj(br.readLine());
+					System.out.println("Kérem adja meg az album megjelenésének évét:");
+					album.setMegjelenes_eve(sc.nextInt());
+					System.out.println("Kérem adja meg az album előadójának a nevét:");
+					album.setEloado(br.readLine());
+					System.out.println("Kérem adja meg az album katalógusszámát:");
+					album.setKatalogusszam(br.readLine());
+					addAlbum(document, album);
+					break;
+				case 2:
+					Eloado eloado = new Eloado();
+					System.out.println("Kérem adja meg az előadó nevét:");
+					eloado.setNev(br.readLine());
+					System.out.println("Kérem adja meg az előadó országát:");
+					eloado.setOrszag(br.readLine());
+					addEloado(document, eloado);
+					break;
+				case 3:
+					Eloado eloadoregi = new Eloado();
+					System.out.println("Kérem adja meg a módosítandó előadó nevét:");
+					eloadoregi.setNev(br.readLine());
+					System.out.println("Kérem adja meg a módosítandó előadó országát:");
+					eloadoregi.setOrszag(br.readLine());
+					Eloado eloadouj = new Eloado();
+					System.out.println("Kérem adja meg a(z) "+eloadoregi.getNev()+" előadó új nevét:");
+					eloadouj.setNev(br.readLine());
+					System.out.println("Kérem adja meg a(z) "+eloadoregi.getNev()+" előadó új országát:");
+					eloadouj.setOrszag(br.readLine());
+					modifyEloado(document, eloadoregi, eloadouj);
+					break;
+				case 4:
+					System.out.println("Fejlesztés alatt");
+					break;
+				case 5:
+					if (PRINT_TO_CONSOLE) {
+						printDocument(document);
+					} else {
+						printDocument(document, new File(OUTPUT_FILE_PATH));
+					}
+					break;
+				default:
+					break;
+				}
+				if(menu==6) {
+					break;
+				}	
 			}
+			
+			br.close();
+			
 		} catch (ParserConfigurationException | SAXException | IOException e) {
 			e.printStackTrace();
 		}
@@ -174,7 +233,14 @@ public class DOM_Main {
 	
 	public static void modifyEloado(Document document, Eloado eloadoregi, Eloado eloado) {
 		
-		NodeList eloadoChildNodes = findEloadoByNev(document, String.valueOf(eloadoregi.getNev())).getChildNodes();
+		Node eloadoNode = findEloadoByNev(document, String.valueOf(eloadoregi.getNev()));
+		if ( eloadoNode == null) {
+			System.out.println("A keresett "+'"'+String.valueOf(eloadoregi.getNev())+'"'+" nevű előadó nem található!");
+			return;
+		}
+		
+		NodeList eloadoChildNodes = eloadoNode.getChildNodes();
+
 		for (int j = 0; j < eloadoChildNodes.getLength(); j++) {
 			Node eloadoChildNode = eloadoChildNodes.item(j);
 			
@@ -221,5 +287,4 @@ public class DOM_Main {
 			e.printStackTrace();
 		}
 	}
-
 }

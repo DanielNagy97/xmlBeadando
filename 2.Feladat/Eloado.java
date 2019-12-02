@@ -8,6 +8,11 @@ public class Eloado {
 		this.nev = nev;
 		this.orszag = orszag;
 	}
+	
+	public Eloado() {
+		this("", "");
+	}
+	
 	public String getNev() {
 		return nev;
 	}
