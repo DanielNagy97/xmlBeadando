@@ -45,10 +45,9 @@ public class DOM_Main {
 			System.out.print("Root element: ");
 			System.out.println(document.getDocumentElement().getNodeName());
 			
-			System.out.print(eloadoExistsIndex(document,"The Doors"));
-			
-
-			addAlbum(document, new Album("Proba cim","P mf",1987,"Pink Floyd","AFR-41212"));
+			addAlbum(document, new Album("Proba cim","Metal",1987,"Eloado neve","AFR-41212"));
+			addEloado(document, new Eloado("Eloado neve","Orszagaaa"));
+			addAlbum(document, new Album("Proba cim","Metal",1987,"Eloado neve","AFR-41212"));
 
 			if (PRINT_TO_CONSOLE) {
 				printDocument(document);
@@ -65,13 +64,16 @@ public class DOM_Main {
 		Node eloadokNode = document.getElementsByTagName("eloadok").item(0);
 		NodeList eloadoNodeList = eloadokNode.getChildNodes();
 
+		
 		for (int i = 0; i < eloadoNodeList.getLength(); i++) {
 			Node eloadoNode = eloadoNodeList.item(i);
-			NodeList eloadoChildNodes = eloadoNode.getChildNodes();
-			for (int j = 0; j < eloadoChildNodes.getLength(); j++) {
-				Node eloadoChildNode = eloadoChildNodes.item(j);
-				if (eloadoChildNode.getNodeName().equals("nev")) {
-					eloadok.add(eloadoChildNode.getTextContent());
+			if (eloadoNode.getNodeName().equals("eloado")) {
+				NodeList eloadoChildNodes = eloadoNode.getChildNodes();
+				for (int j = 0; j < eloadoChildNodes.getLength(); j++) {
+					Node eloadoChildNode = eloadoChildNodes.item(j);
+					if (eloadoChildNode.getNodeName().equals("nev")) {
+						eloadok.add(eloadoChildNode.getTextContent());
+					}
 				}
 			}
 		}
@@ -80,8 +82,10 @@ public class DOM_Main {
 	
 	
 	public static void addAlbum(Document document, Album album) {
-		if (eloadoExistsIndex(document,"The Doors") == -1) {
-			System.out.println();
+		Integer eloadoref = eloadoExistsIndex(document,String.valueOf(album.getEloado()));
+		if (eloadoref == -1) {
+			System.out.println("Nincsen "+'"'+ String.valueOf(album.getEloado())+'"'+" nevű előadó az adatbázisban!");
+			return;
 		}
 		
 		Node albumokNode = document.getElementsByTagName("albumok").item(0);
@@ -90,7 +94,7 @@ public class DOM_Main {
 		albumokNode.appendChild(albumElement);
 
 		Attr eloadoAttribute = document.createAttribute("eloado");
-		eloadoAttribute.setNodeValue(String.valueOf(album.getEloado()));
+		eloadoAttribute.setNodeValue(Integer.toString(eloadoref));
 		albumElement.setAttributeNode(eloadoAttribute);
 
 		Attr katszAttribute = document.createAttribute("katalogusszam");
@@ -108,6 +112,35 @@ public class DOM_Main {
 		Element megjelenesElement = document.createElement( "megjeleneseve");
 		megjelenesElement.setTextContent(String.valueOf(album.getMegjelenes_eve()));
 		albumElement.appendChild(megjelenesElement);
+	}
+	
+	public static void addEloado(Document document, Eloado eloado) {
+		Node eloadokNode = document.getElementsByTagName("eloadok").item(0);
+		
+		NodeList eloadoNodes = eloadokNode.getChildNodes();
+		
+		Integer newEloadoref = 0;
+		for (int i = 0; i < eloadoNodes.getLength(); i++) {
+			Node eloadoNode = eloadoNodes.item(i);
+			if (eloadoNode.getNodeName().equals("eloado")) {
+				newEloadoref++;
+			}
+		}
+
+		Element eloadoElement = document.createElement("eloado");
+		eloadokNode.appendChild(eloadoElement);
+
+		Attr eloadorefAttribute = document.createAttribute("eloadoref");
+		eloadorefAttribute.setNodeValue(Integer.toString(newEloadoref));
+		eloadoElement.setAttributeNode(eloadorefAttribute);
+
+		Element nevElement = document.createElement("nev");
+		nevElement.setTextContent(String.valueOf(eloado.getNev()));
+		eloadoElement.appendChild(nevElement);
+		
+		Element orszagElement = document.createElement("orszag");
+		orszagElement.setTextContent(String.valueOf(eloado.getOrszag()));
+		eloadoElement.appendChild(orszagElement);
 	}
 
 
