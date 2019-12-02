@@ -48,8 +48,8 @@ public class DOM_Main {
 			addAlbum(document, new Album("Proba cim","Metal",1987,"Eloado neve","AFR-41212"));
 			addEloado(document, new Eloado("Eloado neve","Orszagaaa"));
 			addAlbum(document, new Album("Proba cim","Metal",1987,"Eloado neve","AFR-41212"));
-			modifyEloado(document, new Eloado("Edda művek","Magyarország"), new Eloado("Eloado nev új","Orszagasdsdaa"));
-
+			modifyEloado(document, new Eloado("Black Sabbath","Anglia"), new Eloado("Előadó név új","Újország"));
+			
 			if (PRINT_TO_CONSOLE) {
 				printDocument(document);
 			} else {
@@ -143,9 +143,11 @@ public class DOM_Main {
 		eloadoElement.appendChild(orszagElement);
 	}
 	
-	public static void modifyEloado(Document document, Eloado eloadoregi, Eloado eloado) {
+	public static Node findEloadoByNev(Document document, String nev) {
 		Node eloadokNode = document.getElementsByTagName("eloadok").item(0);
 		NodeList eloadoNodeList = eloadokNode.getChildNodes();
+		
+		Node eloadoToModify = null;
 		
 		for (int i = 0; i < eloadoNodeList.getLength(); i++) {
 			Node eloadoNode = eloadoNodeList.item(i);
@@ -158,15 +160,35 @@ public class DOM_Main {
 						Element eElement = (Element) eloadoChildNode;
 						
 						if ("nev".equals(eElement.getNodeName())) {
-							if (String.valueOf(eloadoregi.getNev()).equals(eElement.getTextContent())) {
-								eElement.setTextContent(String.valueOf(eloado.getNev()));
+							if (String.valueOf(nev).equals(eElement.getTextContent())) {
+								eloadoToModify = eloadoNode;
 							}
 						}
-						if ("orszag".equals(eElement.getNodeName())) {
-							if (String.valueOf(eloadoregi.getOrszag()).equals(eElement.getTextContent())) {
-								eElement.setTextContent(String.valueOf(eloado.getOrszag()));
-							}	
-						}
+					}	
+				}
+			}
+		}
+		return eloadoToModify;
+	}
+	
+	
+	public static void modifyEloado(Document document, Eloado eloadoregi, Eloado eloado) {
+		
+		NodeList eloadoChildNodes = findEloadoByNev(document, String.valueOf(eloadoregi.getNev())).getChildNodes();
+		for (int j = 0; j < eloadoChildNodes.getLength(); j++) {
+			Node eloadoChildNode = eloadoChildNodes.item(j);
+			
+			if (eloadoChildNode.getNodeType() == Node.ELEMENT_NODE) {
+				Element eElement = (Element) eloadoChildNode;
+				
+				if ("nev".equals(eElement.getNodeName())) {
+					if (String.valueOf(eloadoregi.getNev()).equals(eElement.getTextContent())) {
+						eElement.setTextContent(String.valueOf(eloado.getNev()));
+					}
+				}
+				if ("orszag".equals(eElement.getNodeName())) {
+					if (String.valueOf(eloadoregi.getOrszag()).equals(eElement.getTextContent())) {
+						eElement.setTextContent(String.valueOf(eloado.getOrszag()));
 					}	
 				}
 			}
