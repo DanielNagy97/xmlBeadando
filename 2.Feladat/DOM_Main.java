@@ -161,7 +161,7 @@ public class DOM_Main {
 		Element albumElement = document.createElement("album");
 		albumokNode.appendChild(albumElement);
 
-		Attr eloadoAttribute = document.createAttribute("eloado");
+		Attr eloadoAttribute = document.createAttribute("eloadoref");
 		eloadoAttribute.setNodeValue(Integer.toString(eloadoref));
 		albumElement.setAttributeNode(eloadoAttribute);
 
