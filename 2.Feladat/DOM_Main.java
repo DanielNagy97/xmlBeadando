@@ -20,7 +20,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
+//import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -28,11 +28,10 @@ import org.xml.sax.SAXException;
 public class DOM_Main {
 	private static final String JAXP_SCHEMA_LANGUAGE = "http://java.sun.com/xml/jaxp/properties/schemaLanguage";
 	private static final String W3C_XML_SCHEMA = "http://www.w3.org/2001/XMLSchema";
-	private static final String NAMESPACE_URI = "beadando";
+	//private static final String NAMESPACE_URI = "beadando";
 	private static final String INPUT_FILE_PATH = "data/minta.xml";
-	private static final String OUTPUT_FILE_PATH = "data/autoDB-output.xml";
-	//kimenet a konzolra, vagy file-ba irodjon
-	private static final boolean PRINT_TO_CONSOLE = true;
+	private static final String OUTPUT_FILE_PATH = "data/lemezkolcsonzo-output.xml";
+
 
 	public static void main(String[] args) {
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -49,15 +48,14 @@ public class DOM_Main {
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 			while(true) {
-				System.out.println("-------------------");
+				System.out.println("----------------------------");
 				System.out.println("1. Album hozzáadása");
 				System.out.println("2. Előadó hozzáadása");
 				System.out.println("3. Előadó módosítása");
-				System.out.println("4. Lekérdezés");
+				System.out.println("4. Albumok évtized szerint");
 				System.out.println("5. XML kiírása");
 				System.out.println("6. Kilépés");
 				int menu = Integer.parseInt(sc.next());
-				System.out.println(menu);
 				switch(menu) {
 				case 1:
 					Album album = new Album();
@@ -95,14 +93,24 @@ public class DOM_Main {
 					modifyEloado(document, eloadoregi, eloadouj);
 					break;
 				case 4:
-					System.out.println("Fejlesztés alatt");
+					System.out.println("Kérem adja meg az évtizedet!(pl 1970)");
+					int evtized = Integer.parseInt(sc.next());
+					lekerdezes(document,evtized);
 					break;
 				case 5:
-					if (PRINT_TO_CONSOLE) {
-						printDocument(document);
-					} else {
-						printDocument(document, new File(OUTPUT_FILE_PATH));
-					}
+						System.out.println("1.Kiírás konzolra.");
+						System.out.println("2.Kiírás fileba.");
+						
+						int choose = Integer.parseInt(sc.next());
+						switch(choose) {
+						case 1:
+							printDocument(document);
+							break;
+						case 2:
+							printDocument(document, new File(OUTPUT_FILE_PATH));
+							System.out.println("A Documentum kiírva a "+ OUTPUT_FILE_PATH +" helyre!");
+							break;
+						}
 					break;
 				default:
 					break;
@@ -113,6 +121,7 @@ public class DOM_Main {
 			}
 			
 			br.close();
+			sc.close();
 			
 		} catch (ParserConfigurationException | SAXException | IOException e) {
 			e.printStackTrace();
@@ -230,6 +239,40 @@ public class DOM_Main {
 		return eloadoToModify;
 	}
 	
+	public static void lekerdezes(Document document, Integer evtized) {
+		Integer count = 0;
+		Node albumokNode = document.getElementsByTagName("albumok").item(0);
+		NodeList albumNodeList = albumokNode.getChildNodes();
+		for (int i = 0; i < albumNodeList.getLength(); i++) {
+			Node albumNode = albumNodeList.item(i);
+			if (albumNode.getNodeName().equals("album")) {
+				NodeList albumChildNodes = albumNode.getChildNodes();
+				for (int j = 0; j < albumChildNodes.getLength(); j++) {
+					Node albumChildNode = albumChildNodes.item(j);
+					
+					if (albumChildNode.getNodeType() == Node.ELEMENT_NODE) {
+						Element eElement = (Element) albumChildNode;
+						
+						if ("megjeleneseve".equals(eElement.getNodeName())) {
+							Integer albumeve = Integer.valueOf(eElement.getTextContent());
+							if (albumeve >= evtized && albumeve < evtized+10) {
+								count++;
+								System.out.println(albumChildNodes.item(j-4).getTextContent());
+								System.out.println(albumeve);
+								System.out.println("\n");
+							}
+						}
+					}	
+				}
+			}
+		}
+		if(count > 0) {
+			System.out.println("Összesen "+count+" darab album szerepel az adatbázisban a "+evtized+"-s évekből.");
+		}
+		else {
+			System.out.println("Jelenleg nem található album az adatbázisban a "+evtized+"-s évekből.");
+		}
+	}
 	
 	public static void modifyEloado(Document document, Eloado eloadoregi, Eloado eloado) {
 		
